@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lynley Janovich</title>
+    <style>
+        body {
+            background-color: #FFC0CB;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        p {
+            color: #555;
+            font-size: 1.3em;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: glitter 3s infinite;
+        }
+        
+        @keyframes glitter {
+            0%, 100% {
+                opacity: 0.3;
+            }
+            50% {
+                opacity: 0.9;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Lynley Janovich</h1>
+    <p>Hello, world! I'm ready to vibe code.</p>
+    
+    <script>
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 3 + 's';
+            sparkle.style.animationDuration = (2 + Math.random() * 2) + 's';
+            
+            // Create pink glitter variations
+            const colors = [
+                'rgba(255, 182, 193, 0.8)', // light pink
+                'rgba(255, 192, 203, 0.9)', // pink
+                'rgba(255, 160, 180, 0.7)', // deeper pink
+                'rgba(255, 255, 255, 0.6)', // white sparkle
+                'rgba(255, 220, 230, 0.8)'  // very light pink
+            ];
+            sparkle.style.background = colors[Math.floor(Math.random() * colors.length)];
+            sparkle.style.boxShadow = '0 0 2px ' + sparkle.style.background;
+            
+            document.body.appendChild(sparkle);
+        }
+        
+        // Create many fine glitter particles
+        for (let i = 0; i < 200; i++) {
+            createSparkle();
+        }
+    </script>
+</body>
+</html>
